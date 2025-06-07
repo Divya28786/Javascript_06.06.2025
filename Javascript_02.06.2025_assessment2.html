@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Javascript- 02.06.2025-Assessment2</title>
+</head>
+<body>
+  <p id="result"></p>
+  <script>
+    window.onload = function() {
+      let input = prompt("Enter your marks (0-100):");
+      let marks = Number(input);
+      let grade = "";
+      if (input ===null || input.trim() === "" || isNaN(marks) || marks<0 || marks>100) {
+        document.getElementById("result").innerText = "Invalid input.";
+        return;
+      }
+      switch(true){
+        case(marks>=90):
+          grade="A";
+          break;
+        case(marks>=80):
+          grade="B";
+          break;
+        case(marks>=70):
+          grade="C";
+          break;
+        case(marks>=60):
+          grade="D";
+          break;
+        case(marks>=50):
+          grade="E";
+          break;
+        default:
+          grade="F";
+      }
+      document.getElementById("result").innerText = "Your grade is: " + grade;
+    };
+  </script>
+</body>
+</html>
