@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript exercise-Function to sort the string</title>
+</head>
+<body>
+    <h1>Sort a string using Javascript Function</h1>
+    <div>
+        <label for="string">Enter the string to sort:</label>
+        <input type="name" id="string">
+    </div>
+    <br>
+    <div>
+        <button onclick="String_Sort()">SORT</button>
+    </div>
+    <br>
+    <div>
+        <strong>sorted string: </strong><span id="result">---</span>
+    </div>
+    <script>
+        function String_Sort(){
+            const input=document.getElementById("string").value;
+            const result=input.split('').sort().join('');
+            document.getElementById("result").textContent=result;
+        }
+    </script>
+</body>
+</html>
