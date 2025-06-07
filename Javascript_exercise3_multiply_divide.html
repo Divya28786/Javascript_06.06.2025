@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript exercise 3 - multiply and divide</title>
+</head>
+<body>
+    <div>
+        <label for="first-number">1st Number:</label>
+        <input type="number" id="first-number">
+    </div>
+    <br>
+    <div>
+        <label for="second-number">2nd Number:</label>
+        <input type="number" id="second-number">
+    </div>
+    <br>
+    <div>
+        <button onclick="multiply()">Multiply</button>
+        <button onclick="divide()">divide</button>
+    </div>
+    <br>
+    <div>
+        <strong>The Result is:</strong>
+        <p id="result"></p>
+    </div>
+    <script>
+        function multiply(){
+            const n1=parseFloat(document.getElementById("first-number").value);
+            const n2=parseFloat(document.getElementById("second-number").value);
+            document.getElementById("result").textContent= n1 * n2;
+        }
+
+        function divide(){
+            const n1=parseFloat(document.getElementById("first-number").value);
+            const n2=parseFloat(document.getElementById("second-number").value);
+            if (n2==0){
+                document.getElementById("result").textContent="Cannot divide by zero";
+            }else{
+                document.getElementById("result").textContent= n1 / n2;
+            }
+        }
+    </script>
+</body>
+</html>
