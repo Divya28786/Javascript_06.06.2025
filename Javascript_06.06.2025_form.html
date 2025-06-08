@@ -1,0 +1,98 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript 06.06.2025 Task</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"rel="stylesheet">
+    <style>
+        .input-box:invalid{
+            border-color: #e74c3c;
+        }
+        .input-box:invalid ~ .error-message{
+            display: block;
+        }
+        .error-message{
+            display: none;
+            color: #e74c3c;
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body>
+<div class="a">
+    <h3 class="b">Javascript Task - Form Validation Using Bootstrap</h3>
+    <form id="validationForm" novalidate>
+        <div class="c">
+            <label class="form-tag">First Name</label>
+            <input type="text" class="input-box" required>
+            <div class="error-message">Enter your first name</div>
+        </div>
+        <div class="c">
+            <label class="form-tag">Last Name</label>
+            <input type="text" class="input-box" required>
+            <div class="error-message">Enter your last name</div>
+        </div>
+        <div class="c">
+            <label class="form-tag">E-Mail</label>
+            <input type="email" class="input-box" required>
+            <div class="error-message">Enter a valid email</div>
+        </div>
+        <div class="c">
+            <label class="form-tag">Phone #</label>
+            <input type="tel" class="input-box" required>
+            <div class="error-message">Enter your phone number</div>
+        </div>
+        <div class="c">
+            <label class="form-tag">Address</label>
+            <input type="text" class="input-box" required>
+            <div class="error-message">Enter your address</div>
+        </div>
+        <div class="c">
+            <label class="form-tag">City</label>
+            <input type="text" class="input-box" required>
+            <div class="error-message">Enter your city</div>
+        </div>
+        <div class="c">
+            <label class="form-tag">State</label>
+            <select class="select-box" required>
+                <option value="">Select your state</option>
+                <option>New York</option>
+                <option>California</option>
+                <option>Texas</option>
+            </select>
+            <div class="error-message">Choose a state</div>
+        </div>
+        <div class="c">
+            <label class="form-tag">Hosting Required?</label><br>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="host" required>
+                <label class="form-check-label">Yes</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="host" required>
+                <label class="form-check-label">No</label>
+            </div>
+            <div class="error-message d-block">Please select one</div>
+        </div>
+        <div class="c">
+            <label class="form-tag">Project Details</label>
+            <textarea class="input-box" rows="3" required></textarea>
+            <div class="error-message">Describe your project</div>
+        </div>
+        <button type="submit" class="warning ">Send</button>
+    </form>
+</div>
+<script>
+    (() =>{
+        const form = document.getElementById('validationForm');
+        form.addEventListener('submit',event =>{
+            if (!form.checkValidity()){
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+        });
+    })();
+</script>
+</body>
+</html>
